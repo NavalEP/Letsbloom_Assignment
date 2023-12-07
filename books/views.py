@@ -13,7 +13,7 @@ class booksAPI(APIView):
     
     def post(self, request):
         serial=BookSerializer(data=request.data)
-        print(request.data)
+        # print(request.data)
         if serial.is_valid():
             serial.save()
             return Response(serial.data, status=status.HTTP_201_CREATED)
